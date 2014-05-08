@@ -1,0 +1,16 @@
+{% extends 'Ist1ChannelBundle::base.html.twig' %}
+
+{% block title %}News{% endblock %}
+
+{% block body %}
+    <div class="channels">
+        <div class="page-header">
+            <h1>News
+                <small>we have great news</small>
+            </h1>
+        </div>
+        {% for channel in channels %}
+            {% include "Ist1ChannelBundle:News:channel.html.twig" %}
+        {% endfor %}
+    </div>
+{% endblock %}

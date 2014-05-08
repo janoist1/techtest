@@ -1,0 +1,22 @@
+<div class="item list-group-item">
+    <div class="media">
+        <div class="pull-left">
+            <img class="media-object" src="{{ item.enclosure.url }}" alt="">
+        </div>
+        <div class="media-body">
+            <a href="{{ item.link }}"><h4 class="media-heading">{{ item.title }}</h4></a>
+            {{ item.description }}
+        </div>
+        <div class="category pull-left">
+            Category:
+            {% if item.category == 'Report' %}
+                <a href="{{ path('channel', {channelCategory: channel.category|lower, newsCategory: item.category|lower}) }}">{{ item.category }}</a>
+            {% else %}
+                {{ item.category }}
+            {% endif %}
+        </div>
+        <div class="pub-date pull-right">
+            {{ item.pubDate|date('Y-m-d H:i') }}
+        </div>
+    </div>
+</div>

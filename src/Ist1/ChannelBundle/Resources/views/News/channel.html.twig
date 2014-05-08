@@ -1,0 +1,21 @@
+<div class="channel panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ channel.title }}</h3>
+    </div>
+    <div class="panel-body">
+        <p>{{ channel.description }}</p>
+        <ul>
+            <li>Category: {{ channel.category }}</li>
+            <li>Build date: {{ channel.lastBuildDate|date('Y-m-d H:i') }}</li>
+            <li>Link: <a href="{{ channel.link }}">{{ channel.link }}</a></li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div class="items list-group">
+            {% for item in channel.items if item.category|lower not in hidden_categories|split(',') and (category == null or item.category|lower == category|lower) %}
+                {% include "Ist1ChannelBundle:News:item.html.twig" %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="panel-footer">{{ channel.copyright }}</div>
+</div>

@@ -15,3 +15,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     channel_url:       http://techtest.sportlobster.dev/feed/feed.xml
     channel_format:    xml
+    hidden_categories: preview

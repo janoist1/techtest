@@ -1,0 +1,9 @@
+.channels {
+    margin: 15px 10px;
+}
+.channel {
+    margin: 10px 5px;
+}
+.pub-date {
+    font-style: italic;
+}
