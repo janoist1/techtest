@@ -1,0 +1,11 @@
+parameters:
+    ist1.channel.request_maker.class: Ist1\RequestMaker\BasicRequestMaker
+    ist1.channel.channel.class: Ist1\ChannelBundle\Service\Channel
+
+services:
+    ist1_channel.request_maker:
+        class: %ist1.channel.request_maker.class%
+
+    ist1_channel.channel:
+        class: %ist1.channel.channel.class%
+        arguments: [@jms_serializer.serializer, @ist1_channel.request_maker, %channel_url%, %channel_format%]
