@@ -11,14 +11,14 @@ use JMS\Serializer\Annotation as JMS;
 class ChannelCollection
 {
     /**
-     * @var \Ist1\ChannelBundle\Entity\Channel
+     * @var array<\Ist1\ChannelBundle\Entity\Channel>
      * @JMS\Type("array<Ist1\ChannelBundle\Entity\Channel>")
      * @JMS\XmlList(inline = true, entry="channel")
      */
     private $channels;
 
     /**
-     * @param \Ist1\ChannelBundle\Entity\Channel $channels
+     * @param array<\Ist1\ChannelBundle\Entity\Channel> $channels
      */
     public function setChannels($channels)
     {
@@ -26,7 +26,7 @@ class ChannelCollection
     }
 
     /**
-     * @return \Ist1\ChannelBundle\Entity\Channel
+     * @return array<\Ist1\ChannelBundle\Entity\Channel>
      */
     public function getChannels()
     {
