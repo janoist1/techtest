@@ -1,0 +1,8 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets "@Ist1ChannelBundle/Resources/public/css/style.css" %}
+    <link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
