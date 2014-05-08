@@ -63,7 +63,7 @@ class Channel
     private $ttl;
 
     /**
-     * @var \Ist1\ChannelBundle\Entity\Item
+     * @var array<\Ist1\ChannelBundle\Entity\Item>
      * @JMS\Type("array<Ist1\ChannelBundle\Entity\Item>")
      * @JMS\XmlList(inline = true, entry="item")
      */
@@ -135,7 +135,7 @@ class Channel
     }
 
     /**
-     * @param \Ist1\ChannelBundle\Entity\Item $items
+     * @param array<\Ist1\ChannelBundle\Entity\Item> $items
      */
     public function setItems($items)
     {
@@ -143,7 +143,7 @@ class Channel
     }
 
     /**
-     * @return \Ist1\ChannelBundle\Entity\Item
+     * @return array<\Ist1\ChannelBundle\Entity\Item>
      */
     public function getItems()
     {
