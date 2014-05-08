@@ -12,13 +12,11 @@ class IndexController extends Controller
     /**
      * Displays the index page with a list of channels
      *
-     * @Route("/")
+     * @Route("/", name="home")
      * @Template()
      */
     public function indexAction()
     {
-        return array(
-            'items' => array()
-        );
+        return array();
     }
 }

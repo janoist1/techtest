@@ -1,14 +1,17 @@
-{% extends '::base.html.twig' %}
+{% extends 'Ist1ChannelBundle::base.html.twig' %}
 
-{% block title %}Index - Channel details{% endblock %}
-
-{% block stylesheets %}
-{{ parent() }}
-    {% stylesheets "@Ist1ChannelBundle/Resources/public/css/style.css" %}
-    <link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}"/>
-    {% endstylesheets %}
-{% endblock %}
+{% block title %}Index{% endblock %}
 
 {% block body %}
-    hey
+    <div class="page-header">
+        <h1>Index
+            <small>choose a category</small>
+        </h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="{{ path('channel', {channelCategory: 'football'}) }}">football</a>
+        </div>
+    </div>
 {% endblock %}
