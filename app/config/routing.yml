@@ -1,0 +1,4 @@
+ist1_channel:
+    resource: "@Ist1ChannelBundle/Controller/"
+    type:     annotation
+    prefix:   /
