@@ -12,9 +12,17 @@
     </div>
     <div class="panel-body">
         <div class="items list-group">
-            {% for item in channel.items if item.category|lower not in hidden_categories|split(',') and (category == null or item.category|lower == category|lower) %}
-                {% include "Ist1ChannelBundle:News:item.html.twig" %}
-            {% endfor %}
+            {% if channel.items %}
+                {% for item in channel.items if item.category|lower not in hidden_categories|split(',') and (category == null or item.category|lower == category|lower) %}
+                    {% include "Ist1ChannelBundle:News:item.html.twig" %}
+                {% endfor %}
+            {% else %}
+                <div class="panel-danger">
+                    <div class="panel-body">
+                        There were no news to display.
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="panel-footer">{{ channel.copyright }}</div>

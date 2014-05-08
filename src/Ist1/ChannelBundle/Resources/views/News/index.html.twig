@@ -9,8 +9,16 @@
                 <small>we have great news</small>
             </h1>
         </div>
-        {% for channel in channels %}
-            {% include "Ist1ChannelBundle:News:channel.html.twig" %}
-        {% endfor %}
+        {% if channels %}
+            {% for channel in channels %}
+                {% include "Ist1ChannelBundle:News:channel.html.twig" %}
+            {% endfor %}
+        {% else %}
+            <div class="panel-danger">
+                <div class="panel-body">
+                    There were no channels to display.
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
