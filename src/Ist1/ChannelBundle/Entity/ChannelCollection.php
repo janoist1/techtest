@@ -32,4 +32,22 @@ class ChannelCollection
     {
         return $this->channels;
     }
+
+    /**
+     * @param $category
+     * @return array<\Ist1\ChannelBundle\Entity\Channel>
+     */
+    public function getChannelsByCategory($category)
+    {
+        $channels = array();
+
+        /** @var Channel $channel */
+        foreach ($this->channels as $channel) {
+            if (strcasecmp($channel->getCategory(), $category) == 0){
+                $channels[] = $channel;
+            }
+        }
+
+        return $channels;
+    }
 } 
